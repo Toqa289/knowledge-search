@@ -14,7 +14,7 @@ Everything you need to run this project for the first time.
 
 Windows: install Python from <https://www.python.org/downloads/> and tick **"Add python.exe to PATH"**.
 
-## 2. Install the core dependencies
+## 2. Install the dependencies
 
 From the project folder:
 
@@ -53,12 +53,11 @@ path of `output/chat.html`. Re-run it whenever you add or change files.
 Open `output/chat.html` in your browser (or double-click `run.bat` on Windows, run
 `./run.sh` on macOS / Linux). Keyword search works immediately, offline.
 
-## 6. (Optional) Semantic search
+## 6. Semantic search
 
-```bash
-python -m pip install -r requirements-semantic.txt
-python preprocess.py          # computes document embeddings; first run downloads the ~470 MB model
-```
+Nothing extra to install: step 2 already installed `sentence-transformers`. When you run
+`python preprocess.py` (step 4) it computes the document embeddings; the first run downloads a
+~470 MB model.
 
 Open the page: your questions are embedded in the browser itself, no server needed. The first
 time it needs internet once to download the library and the ~120 MB model (cached afterwards).

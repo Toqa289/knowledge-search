@@ -78,7 +78,7 @@ To keep answers trustworthy:
 git clone <this-repo>
 cd knowledge-search
 
-python -m pip install -r requirements.txt     # core dependencies
+python -m pip install -r requirements.txt     # installs everything (incl. semantic search)
 python preprocess.py                          # build the pages (a small sample is included)
 ```
 
@@ -88,14 +88,12 @@ double-click `run.bat`; on macOS / Linux run `./run.sh`.
 To add your own documents, put them in `input/` (sub-folders become **categories**) and run
 `python preprocess.py` again.
 
-### Enable semantic search (optional)
+### Semantic search
 
-```bash
-python -m pip install -r requirements-semantic.txt
-python preprocess.py        # compute the document embeddings
-```
+It is included: `requirements.txt` installs `sentence-transformers`, and `python preprocess.py` computes
+the document embeddings (the first run downloads a ~470 MB model).
 
-Then open the page. Semantic search is on by default (Settings -> **Enable semantic search**). The
+When you open the page, Semantic search is on by default (Settings -> **Enable semantic search**). The
 status line shows when the in-browser model is loading or ready.
 
 ### Enable smart answers (optional)
@@ -119,8 +117,7 @@ cannot reach Groq directly (CORS error), run `python groq_proxy.py` and put
 | `st_loader.py` | Imports sentence-transformers; falls back to a stand-in for scikit-learn if Windows blocks it. |
 | `groq_proxy.py` | Optional local proxy for the Groq API (only if the browser is blocked by CORS). |
 | `output/` | Generated pages and `index.json` (not committed: it contains your document text). |
-| `requirements.txt` | Core Python dependencies. |
-| `requirements-semantic.txt` | Optional dependency for semantic search. |
+| `requirements.txt` | All Python dependencies (docx, xlsx, pdf, semantic embeddings). |
 | `run.bat` / `run.sh` | One-click build + open. |
 
 ## Supported file types

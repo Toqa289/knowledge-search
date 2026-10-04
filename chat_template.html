@@ -558,7 +558,7 @@
     els.semanticEnabled.checked = aiSettings.semanticEnabled;
     els.semanticAvailHint.innerHTML = hasEmbeddings
       ? 'Matches the <em>meaning</em> of your question, not just the words. The first time, your browser downloads a small language model (about 120 MB, from Hugging Face) and caches it; this needs internet once. If it cannot load, the chatbot falls back to keyword search automatically.'
-      : '\u26a0\ufe0f Your files have no embeddings yet. Run <code>python -m pip install -r requirements-semantic.txt</code> and then <code>python preprocess.py</code> again to create them.';
+      : '\u26a0\ufe0f Your files have no embeddings yet. Run <code>python -m pip install -r requirements.txt</code> and then <code>python preprocess.py</code> again to create them.';
     els.settingsOverlay.classList.add('open');
   }
   function closeSettingsModal(){ els.settingsOverlay.classList.remove('open'); }
