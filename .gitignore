@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated pages: they embed the full text of your documents
+output/
+
+# Your own documents (may be confidential). Only the bundled sample is tracked.
+input/*
+!input/sample/
+!input/sample/**
+
+# Editors / OS
+.vscode/
+.idea/
+.deepeval/
+.DS_Store
+Thumbs.db

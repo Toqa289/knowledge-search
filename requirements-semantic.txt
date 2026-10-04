@@ -1,0 +1,3 @@
+# Optional: local semantic search (understands meaning, not just keywords).
+# Downloads a ~470 MB model on first use, then works offline. No API key needed.
+sentence-transformers>=3.0
